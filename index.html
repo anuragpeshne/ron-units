@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Rise of Nations Units</title>
+        <meta name="description" content="Graph theory on RON units">
+        <meta name="author" content="Anurag Peshne">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.15.1/cytoscape.min.js"></script>
+
+        <style type="text/css">
+         body {
+             font-size: 20px;
+             margin: 50px 0;
+         }
+
+         h1 {
+             text-align:center;
+         }
+
+         input[type="text"], input[type="number"]
+         {
+             font-size:20px;
+             margin: 2px 5px;
+         }
+
+         input[type="text"]
+         {
+             width: 10em;
+         }
+
+         input[type="number"]
+         {
+             width: 5em;
+         }
+
+         #container {
+             min-width: 400px;
+             max-width: 800px;
+             margin: 0 auto;
+         }
+        </style>
+
+    </head>
+
+    <body>
+        <script type="text/javascript">
+         var cy = cytoscape({
+             container: document.getElementById('cy'), // container to render in
+             elements: [ // list of graph elements to start with
+                         { // node a
+                             data: { id: 'a' }
+                         },
+                         { // node b
+                             data: { id: 'b' }
+                         },
+                         { // edge ab
+                             data: { id: 'ab', source: 'a', target: 'b' }
+                         }
+             ],
+             style: [ // the stylesheet for the graph
+                      {
+                          selector: 'node',
+                          style: {
+                              'background-color': '#666',
+                              'label': 'data(id)'
+                          }
+                      },
+                      {
+                          selector: 'edge',
+                          style: {
+                              'width': 3,
+                              'line-color': '#ccc',
+                              'target-arrow-color': '#ccc',
+                              'target-arrow-shape': 'triangle',
+                              'curve-style': 'bezier'
+                          }
+                      }
+             ],
+             layout: {
+                 name: 'grid',
+                 rows: 1
+             }
+         });
+        </script>
+        <div id="container">
+            <div id="cy"></div>
+        </div>
+    </body>
+</html>
