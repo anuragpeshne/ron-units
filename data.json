@@ -1,0 +1,295 @@
+[
+  {
+    "name": "light-infantry",
+    "strong-vs": [
+      "foot-archers",
+      "ranged-cavalry"
+    ],
+    "weak-vs": [
+      "light-cavalry",
+      "heavy-cavalry",
+      "heavy-infantry"
+    ],
+    "resources": [
+      "food",
+      "timber"
+    ]
+  },
+  {
+    "name": "foot-archers",
+    "strong-vs": [
+      "heavy-infantry",
+      "ranged-cavalry"
+    ],
+    "weak-vs": [
+      "light-infantry",
+      "light-cavalry",
+      "heavy-cavalry"
+    ],
+    "resources": [
+      "timber",
+      "wealth"
+    ]
+  },
+  {
+    "name": "heavy-infantry",
+    "strong-vs": [
+      "light-infantry",
+      "light-cavalry",
+      "heavy-cavalry",
+      "tanks"
+    ],
+    "weak-vs": [
+      "foot-archers",
+      "ranged-cavalry",
+      "gunpowder-infantry",
+      "modern-infantry",
+      "machine-guns"
+    ],
+    "resources": [
+      "food",
+      "timber",
+      "metal"
+    ]
+  },
+  {
+    "name": "light-cavalry",
+    "strong-vs": [
+      "light-infantry",
+      "foot-archers",
+      "ranged-cavalry",
+      "artillery-weapons"
+    ],
+    "weak-vs": [
+      "heavy-infantry",
+      "heavy-cavalry",
+      "building"
+    ],
+    "resources": [
+      "food",
+      "timber"
+    ]
+  },
+  {
+    "name": "ranged-cavalry",
+    "strong-vs": [
+      "civilian",
+      "heavy-infantry",
+      "support-units",
+      "artillery-weapons",
+      "machine-guns",
+      "heavy-cavalry"
+    ],
+    "weak-vs": [
+      "foot-archers",
+      "light-infantry",
+      "light-cavalry",
+      "tank",
+      "modern-infantry"
+    ],
+    "resource": [
+      "food",
+      "timber",
+      "wealth",
+      "oil"
+    ]
+  },
+  {
+    "name": "support-units",
+    "strong-vs": [],
+    "weak-vs": [],
+    "resource": []
+  },
+  {
+    "name": "artillery-weapons",
+    "strong-vs": [
+      "building"
+    ],
+    "resource": [
+      "timber",
+      "metal",
+      "oil"
+    ]
+  },
+  {
+    "name": "machine-guns",
+    "strong-vs": [
+      "modern-infantry",
+      "heavy-infantry"
+    ],
+    "weak-vs": [
+      "ranged-cavalry",
+      "tank",
+      "fighter-aircraft"
+    ],
+    "resources": [
+      "metal",
+      "wealth"
+    ]
+  },
+  {
+    "name": "modern-infantry",
+    "strong-vs": [
+      "ranged-cavalry",
+      "heavy-infantry",
+      "artillery-weapons"
+    ],
+    "weak-vs": [
+      "tanks",
+      "machine-guns"
+    ],
+    "resources": [
+      "food",
+      "timber"
+    ]
+  },
+  {
+    "name": "tanks",
+    "strong-vs": [
+      "civilian",
+      "machine-guns",
+      "artillery-weapons",
+      "ranged-cavalry",
+      "modern-infantry"
+    ],
+    "weak-vs": [
+      "heavy-infantry",
+      "helicopters"
+    ],
+    "resources": [
+      "metal",
+      "oil"
+    ]
+  },
+  {
+    "name": "machine-guns",
+    "strong-vs": [
+      "modern-infantry",
+      "heavy-infantry"
+    ],
+    "weak-vs": [
+      "ranged-cavalry",
+      "Tank-",
+      "fighter-aircraft"
+    ],
+    "resources": [
+      "metal",
+      "wealth"
+    ]
+  },
+  {
+    "name": "fighter-aircraft",
+    "strong-vs": [
+      "fighter-aircraft",
+      "bomber-aircraft",
+      "helicopters",
+      "light-infantry",
+      "heavy-infantry",
+      "foot-archers",
+      "gunpowder-infantry",
+      "modern-infantry",
+      "tanks"
+    ],
+    "weak-vs": [
+      "anti-aircraft",
+      "light-ships"
+    ],
+    "resources": [
+      "wealth",
+      "oil"
+    ]
+  },
+  {
+    "name": "anti-aircraft",
+    "strong-vs": [
+      "fighter-aircraft",
+      "bomber-aircraft",
+      "helicopters"
+    ],
+    "weak-vs": [],
+    "resources": [
+      "food",
+      "wealth"
+    ]
+  },
+  {
+    "name": "bomber-aircraft",
+    "strong-vs": [
+      "buildings"
+    ],
+    "weak-vs": [
+      "anti-aircraft",
+      "fighter-aircraft",
+      "light-ships"
+    ],
+    "resources": [
+      "wealth",
+      "oil"
+    ]
+  },
+  {
+    "name": "light-ships",
+    "strong-vs": [
+      "fire-ships",
+      "submarines",
+      "fighter-aircraft",
+      "bomber-aircraft",
+      "helicopters"
+    ],
+    "weak-vs": [
+      "heavy-ships"
+    ],
+    "resources": [
+      "food",
+      "timber",
+      "metal",
+      "oil"
+    ]
+  },
+  {
+    "name": "fire-ships",
+    "strong-vs": [
+      "heavy-ships",
+      "bombardment-ships"
+    ],
+    "weak-vs": [
+      "light-ships"
+    ],
+    "resources": [
+      "timber",
+      "wealth"
+    ]
+  },
+  {
+    "name": "heavy-ships",
+    "strong-vs": [
+      "light-ships",
+      "bombardment-ships"
+    ],
+    "weak-vs": [
+      "fire-ships",
+      "submarines",
+      "fighter-aircraft",
+      "bomber-aircraft",
+      "helicopters"
+    ],
+    "resources": [
+      "timber",
+      "metal"
+    ]
+  },
+  {
+    "name": "bombardment-ships",
+    "strong-vs": [
+      "buildings"
+    ],
+    "weak-vs": [
+      "fire-ships",
+      "heavy-ships"
+    ],
+    "resources": [
+      "timber",
+      "metal"
+    ]
+  }
+]
