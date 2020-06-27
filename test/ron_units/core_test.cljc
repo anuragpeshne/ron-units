@@ -36,4 +36,20 @@
     (let [input (slurp "./data.json")
           json-input (json/read-str input)
           actual-out (json-to-cytoscape-ds json-input "strong-vs")]
-      (is (= 83 (count actual-out))))))
+      (is (= 88 (count actual-out))))))
+
+(deftest get-strong-vs-test
+  (testing "get-strong-vs"
+    (let [input (slurp "./data.json")
+          json-input (json/read-str input)
+          actual-out (get-strong-vs json-input "artillery-weapons")
+          exp-out ["buildings"]]
+      (is (= actual-out exp-out)))))
+
+(deftest get-weak-vs-bfs-levels-test
+  (testing "get breadth first traversal levels"
+    (let [input (slurp "./data.json")
+          json-input (json/read-str input)
+          actual-out (get-weak-vs-bfs-levels json-input "artillery-weapons")
+          exp-out ["light-cavalry"]]
+      (is (= actual-out exp-out)))))

@@ -323,5 +323,23 @@
       "food",
       "timber"
     ]
+  },
+  {
+    "name": "heavy-cavalry",
+    "strong-vs": [
+      "light-infantry",
+      "foot-archers",
+      "light-cavalry",
+      "gunpowder-infantry",
+      "artillery-weapons"
+    ],
+    "weak-vs": [
+      "heavy-infantry",
+      "anged-cavalry"
+    ],
+    "resources": [
+      "Metal",
+      "Wealth"
+    ]
   }
 ]
