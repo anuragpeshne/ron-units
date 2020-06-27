@@ -63,7 +63,7 @@
     "weak-vs": [
       "heavy-infantry",
       "heavy-cavalry",
-      "building"
+      "buildings"
     ],
     "resources": [
       "food",
@@ -103,7 +103,7 @@
   {
     "name": "artillery-weapons",
     "strong-vs": [
-      "building"
+      "buildings"
     ],
     "resource": [
       "timber",
@@ -290,6 +290,38 @@
     "resources": [
       "timber",
       "metal"
+    ]
+  },
+  {
+    "name": "submarines",
+    "strong-vs": [
+      "bombardment-ships",
+      "aircraft-carrier",
+      "transport-ships"
+    ],
+    "weak-vs": [
+      "light-ships",
+      "helicopters"
+    ],
+    "resources": [
+      "wealth",
+      "oil"
+    ]
+  },
+  {
+    "name": "gunpowder-infantry",
+    "strong-vs": [
+      "heavy-infantry",
+      "foot-archers",
+      "ranged-cavalry"
+    ],
+    "weak-vs": [
+      "light-cavalry",
+      "Heavy-cavalry"
+    ],
+    "resources": [
+      "food",
+      "timber"
     ]
   }
 ]

@@ -30,3 +30,10 @@
                    {:data {:id "d"}}]
           actual-out (json-to-cytoscape-ds json-input "friends")]
       (is (= (set exp-out) (set actual-out))))))
+
+(deftest ron-data-test
+  (testing "test on actual data"
+    (let [input (slurp "./data.json")
+          json-input (json/read-str input)
+          actual-out (json-to-cytoscape-ds json-input "strong-vs")]
+      (is (= 83 (count actual-out))))))
