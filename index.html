@@ -49,6 +49,14 @@
              top: 0px;
              left: 0px;
          }
+
+         .direct-enemy {
+             background-color: red;
+         }
+
+         .indirect-friends {
+             background-color: green;
+         }
         </style>
 
     </head>
@@ -120,8 +128,34 @@
              });
 
              cy.on('tap', 'node', function(evt){
-                 var node = evt.target;
-                 console.log( 'tapped ' + node.id() );
+                 var currentNode = evt.target;
+                 var unitName = currentNode.id();
+                 console.log( 'tapped ' + currentNode.id() );
+                 var weakVsNeighbors = ron_units.core.get_weak_vs_bfs_levels(data, unitName);
+                 console.log(weakVsNeighbors);
+                 var directEnemies = weakVsNeighbors[0] || [];
+                 var indirectFriends = weakVsNeighbors[1] || [];
+                 console.log(directEnemies);
+                 console.log(indirectFriends);
+                 // reset all nodes color
+                 var allNodes = cy.nodes();
+                 for (var i = 0; i < allNodes.length; i++) {
+                     var node = allNodes[i];
+                     node.style("background-color", "#ccc");
+                 }
+                 currentNode.style("background-color", "#000");
+                 for (var i = 0; i < directEnemies.length; i++) {
+                     var node = cy.getElementById(directEnemies[i]);
+                     node.style("background-color", "red");
+                 }
+                 for (var i = 0; i < indirectFriends.length; i++) {
+                     var node = cy.getElementById(indirectFriends[i]);
+                     if (directEnemies.indexOf(indirectFriends[i]) > -1) {
+                         node.style("background-color", "orange");
+                     } else {
+                         node.style("background-color", "green");
+                     }
+                 }
              });
          });
 

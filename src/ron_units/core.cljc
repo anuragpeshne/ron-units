@@ -51,11 +51,13 @@
     (zipmap keys values)))
 
 (defn create-weak-vs-mapping
-  "weak-vs listing is not complete, create using strong-vs"
+  "weak-vs listing is not complete, create inverse mapping using strong-vs"
   [json-raw]
   (let [json-input (format-input json-raw)]
     (loop [[current-unit-obj & rest-obj] json-input
-           weak-vs-mapping (zipmap (keys json-input) (repeat []))]
+           weak-vs-mapping (zipmap
+                            (map #(get % "name") json-input)
+                            (repeat []))]
       (if (nil? current-unit-obj)
         weak-vs-mapping
         (let [current-unit (get current-unit-obj "name")
@@ -76,19 +78,16 @@
   ([json-raw unit] (get-weak-vs-bfs-levels json-raw unit 4))
   ([json-raw unit max-depth]
    (let [json-input (format-input json-raw)
-         adj-list (create-adj-list json-input)]
+         weak-vs-list (create-weak-vs-mapping json-input)]
      (loop [levels []
-            queue [(get adj-list unit)]
+            queue [unit]
             current-depth 0
             visited #{}]
-       (println adj-list)
-       (println queue)
        (if (or (> current-depth max-depth)
                (empty? queue))
          (format-output levels)
-         (let [new-level (set (concat (map #(:weak-vs %) queue)))
-               unvisited-neighbors (filter #(not (contains? visited %)) new-level)
-               new-queue (map #(get adj-list %) unvisited-neighbors)
+         (let [new-level (set (apply concat (map #(get weak-vs-list %) queue)))
+               new-queue (filter #(not (contains? visited %)) new-level)
                new-visited (set (concat visited new-queue))]
            (recur (conj levels new-level)
                   new-queue

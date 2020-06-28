@@ -51,5 +51,13 @@
     (let [input (slurp "./data.json")
           json-input (json/read-str input)
           actual-out (get-weak-vs-bfs-levels json-input "artillery-weapons")
-          exp-out ["light-cavalry"]]
-      (is (= actual-out exp-out)))))
+          direct-enemy (get actual-out 0)
+          exp-out "light-cavalry"]
+      (is (contains? direct-enemy exp-out)))))
+
+(deftest create-weak-vs-mapping-test
+  (testing "testing reverse mapping"
+    (let [input (slurp "./data.json")
+          json-input (json/read-str input)
+          actual-out (create-weak-vs-mapping json-input)]
+      (is (> 5 (- (count actual-out) (count json-input)))))))
