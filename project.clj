@@ -9,5 +9,5 @@
   :repl-options {:init-ns ron-units.core}
   :cljsbuild {:builds [{:source-paths ["src"]
                         :compiler {:output-to "target/javascripts/main.js"
-                                   :optimizations :whitespace
-                                   :pretty-print true}}]})
+                                   :optimizations :advanced
+                                   :pretty-print false}}]})

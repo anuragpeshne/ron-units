@@ -13,7 +13,7 @@
   #?(:cljs (clj->js native-json)
      :clj native-json))
 
-(defn json-to-cytoscape-ds
+(defn ^:export json-to-cytoscape-ds
   "Converts a Graph from json to Cytoscape library data format"
   [json-raw-input relation-field]
   (let [json-input (format-input json-raw-input)]
@@ -35,7 +35,7 @@
         (let [distinct-output-values (set output)]
           (format-output distinct-output-values))))))
 
-(defn get-strong-vs
+(defn ^:export get-strong-vs
   [json-raw unit-name]
   (let [json-input (format-input json-raw)
         unit-obj (first (filter #(= (get % "name") unit-name) json-input))]
@@ -50,7 +50,7 @@
                                :resources (get obj "resources")}) json-input)]
     (zipmap keys values)))
 
-(defn create-weak-vs-mapping
+(defn ^:export create-weak-vs-mapping
   "weak-vs listing is not complete, create inverse mapping using strong-vs"
   [json-raw]
   (let [json-input (format-input json-raw)]
@@ -73,7 +73,7 @@
                     (recur rest-strong-vs new-map))))]
           (recur rest-obj new-map-after-adding-neighbors))))))
 
-(defn get-weak-vs-bfs-levels
+(defn ^:export get-weak-vs-bfs-levels
   "Returns list of list of neighbors breadth first"
   ([json-raw unit] (get-weak-vs-bfs-levels json-raw unit 4))
   ([json-raw unit max-depth]
